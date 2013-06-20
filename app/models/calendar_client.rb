@@ -37,6 +37,6 @@ module CalendarClient
   end
 
   def execute(email, time_min, time_max)
-    client.execute(api_method: service.events.list, parameters: {'calendarId' => "#{email}", 'timeMin' => time_min, 'timeMax' => time_max})
+    client.execute(api_method: service.events.list, parameters: {'calendarId' => "#{email}", 'timeMin' => time_min, 'timeMax' => time_max, 'singleEvents' => true})
   end
 end
