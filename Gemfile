@@ -7,6 +7,7 @@ gem 'google-api-client'
 gem 'tapp'
 gem 'yam'
 gem 'httpclient'
+gem 'thin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
