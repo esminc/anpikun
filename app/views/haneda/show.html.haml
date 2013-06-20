@@ -1,18 +1,31 @@
 %script{type: 'text/javascript', 'data-app-id' => "gYbe7hXinXHFOERJGfAe6g", src:"https://assets.yammer.com/platform/yam.js"}
 
 .google-calendar
+  %h1 Google Calendar
   .search-form
     = form_tag do
-      = text_field_tag :email
+      = text_field_tag :email, nil, placeholder: 'example@esm.co.jp', require: true
 
       = submit_tag 'Search', class: 'btn'
 
   .body
     - if @body
-      - @body.data.items.each do |item|
-        .start_time= item.start.date_time
-        .end_time= item.end.date_time
-        .summary= item.summary
+      - @body.data.items.each_with_index do |item, n|
+        .item
+          - if n == 0
+            .name
+              = Date.today.strftime("%Y/%m/%d")
+              の
+              %span= item.creator.displayName
+              さんの予定
+
+          - if item.start.date_time
+            .start= item.start.date_time.try(:strftime, "%H:%M")
+            〜
+            .end= item.end.date_time.try(:strftime, "%H:%M")
+          - else
+            終日
+          = item.summary
 
 .yammer
   #embedded-feed
