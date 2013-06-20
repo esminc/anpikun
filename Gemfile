@@ -5,6 +5,8 @@ gem 'haml-rails'
 gem 'google-api-client'
 
 gem 'tapp'
+gem 'yam'
+gem 'httpclient'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
