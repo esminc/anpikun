@@ -1,6 +1,6 @@
 %script{type: 'text/javascript', 'data-app-id' => "gYbe7hXinXHFOERJGfAe6g", src:"https://assets.yammer.com/platform/yam.js"}
 
-.seach-form
+.search-form
   = form_tag do
     = text_field_tag :email
 
@@ -12,7 +12,8 @@
       .end_time= item.end.date_time
       .summary= item.summary
 
-#embedded-feed
+.yammer
+  #embedded-feed
 
 :javascript
   yam.connect.embedFeed(
