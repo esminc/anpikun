@@ -1,14 +1,16 @@
 %script{type: 'text/javascript', 'data-app-id' => "gYbe7hXinXHFOERJGfAe6g", src:"https://assets.yammer.com/platform/yam.js"}
 
-%h1 Anpikun
-
-.email-form
+.seach-form
   = form_tag do
     = text_field_tag :email
 
     = submit_tag 'search'
 
-  = @body.data.items if @body
+  - if @body
+    - @body.data.items.each do |item|
+      .start_time= item.start.date_time
+      .end_time= item.end.date_time
+      .summary= item.summary
 
 #embedded-feed
 

@@ -1,0 +1,13 @@
+@charset "UTF-8"
+@import 'compass/utilities'
+@import 'compass/css3'
+
+@mixin line-bottom($op1: .2, $op2: .3)
+  border-bottom: 1px solid rgba(0, 0, 0, $op1)
+  @include box-shadow(rgba(255, 255, 255, $op2)0 2px 0)
+
+@mixin gradient-top-darken($color: #666, $darken: 8%)
+  background-color: $color
+  @include filter-gradient(darken($color, $darken), $color, vertical)
+  @include background-image(linear-gradient(darken($color, $darken)0%, $color 10%))
+
