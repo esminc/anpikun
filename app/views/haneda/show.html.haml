@@ -1,16 +1,18 @@
 %script{type: 'text/javascript', 'data-app-id' => "gYbe7hXinXHFOERJGfAe6g", src:"https://assets.yammer.com/platform/yam.js"}
 
-.search-form
-  = form_tag do
-    = text_field_tag :email
+.google-calendar
+  .search-form
+    = form_tag do
+      = text_field_tag :email
 
-    = submit_tag 'search'
+      = submit_tag 'Search', class: 'btn'
 
-  - if @body
-    - @body.data.items.each do |item|
-      .start_time= item.start.date_time
-      .end_time= item.end.date_time
-      .summary= item.summary
+  .body
+    - if @body
+      - @body.data.items.each do |item|
+        .start_time= item.start.date_time
+        .end_time= item.end.date_time
+        .summary= item.summary
 
 .yammer
   #embedded-feed
