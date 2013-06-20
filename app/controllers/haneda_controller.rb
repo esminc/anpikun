@@ -1,0 +1,2 @@
+class HanedaController < ApplicationController
+end
