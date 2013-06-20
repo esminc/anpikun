@@ -1,0 +1,10 @@
+%h1 Anpikun
+
+.email-form
+  = form_tag do
+    = text_field_tag :email
+
+    = submit_tag 'search'
+
+  = @body.data.items if @body
+
