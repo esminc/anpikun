@@ -28,7 +28,7 @@ module CalendarClient
     client.authorization.client_id     = ENV['CLIENT_ID'] || oauth_yaml['client_id']
     client.authorization.client_secret = ENV['CLIENT_SECRET'] || oauth_yaml['client_secret']
     client.authorization.scope         = ENV['SCOPE'] || oauth_yaml['scope']
-    client.authorization.refresh_token = ENV['REFRESH_TOKEN'] || oauth_yaml['refresh_token']
+    #client.authorization.refresh_token = ENV['REFRESH_TOKEN'] || oauth_yaml['refresh_token']
     client.authorization.access_token  = ENV['ACCESS_TOKEN'] || oauth_yaml['access_token']
   end
 
